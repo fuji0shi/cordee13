@@ -25,7 +25,6 @@ const MyApp: AppType<{ session: Session | null }> = ({
   return (
     <SessionProvider session={session}>
       <NextUIProvider>
-        {" "}
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
