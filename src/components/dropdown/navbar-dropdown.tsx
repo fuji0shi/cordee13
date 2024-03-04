@@ -26,11 +26,12 @@ export const NavbarDropdown = (props: NavbarDropdownProps) => {
         <Button
           disableRipple
           className="bg-transparent p-0 data-[hover=true]:bg-transparent"
-          endContent={<ChevronDown className="size-5" />}
-          radius="sm"
+          endContent={<ChevronDown className="size-4" />}
           variant="light"
         >
-          {content.title}
+          <span className="hover:text-lapis-lazuli text-lg ">
+            {content.title}
+          </span>
         </Button>
       </DropdownTrigger>
       <DropdownMenu
@@ -53,7 +54,9 @@ export const NavbarDropdown = (props: NavbarDropdownProps) => {
       </DropdownMenu>
     </Dropdown>
   ) : (
-    <Link href={content.href}>{content.title}</Link>
+    <Link href={content.href} className="hover:text-lapis-lazuli text-lg">
+      {content.title}
+    </Link>
   );
 };
 

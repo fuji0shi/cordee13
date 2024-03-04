@@ -23,7 +23,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
   const getLayout = Component.getLayout ?? ((page) => page);
   const layout = getLayout(<Component {...pageProps} />);
   return (
-    <SessionProvider session={session}>
+    <SessionProvider session={session as Session}>
       <NextUIProvider>
         <ThemeProvider
           attribute="class"
