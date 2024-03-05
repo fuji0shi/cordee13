@@ -3,7 +3,7 @@ import type { NavMenuConfig } from "@/types";
 export const navMenuConfig: NavMenuConfig = {
   association: [
     {
-      title: "L'assocation",
+      title: "L'association",
       items: [
         {
           title: "Les collectifs",

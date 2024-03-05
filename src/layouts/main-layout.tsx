@@ -9,7 +9,7 @@ export const MainLayout = ({ children }: LayoutProps) => {
         <SimpleNavbar />
       </header>
       <main>
-        <div className="flex h-full flex-col  py-4" id="main-content">
+        <div className="flex h-full flex-col py-4" id="main-content">
           {children}
         </div>
       </main>

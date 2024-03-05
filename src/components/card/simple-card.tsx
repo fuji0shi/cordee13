@@ -32,7 +32,7 @@ export const SimpleCard = (props: SimpleCardProps) => {
         <small className="text-default-500">{content.date}</small>
         <h4 className="text-large font-bold">{content.description}</h4>
       </CardHeader>
-      <CardBody className="h-[150px] cursor-pointer overflow-visible">
+      <CardBody className="min-h-[100px] cursor-pointer overflow-visible">
         {children}
       </CardBody>
     </Card>

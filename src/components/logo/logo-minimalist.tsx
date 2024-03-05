@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { useRouter } from "next/router";
 type LogoProps = {
   className?: string;
 };
@@ -7,12 +6,8 @@ type LogoProps = {
 //*$ Composant principal
 export const Logo = (props: LogoProps) => {
   const { className } = props;
-  const router = useRouter();
   return (
-    <div
-      className={cn("cursor-pointer", className)}
-      onClick={() => router.push("/")}
-    >
+    <div className={cn("cursor-pointer", className)}>
       <svg
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"

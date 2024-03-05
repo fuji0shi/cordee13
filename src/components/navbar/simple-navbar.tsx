@@ -1,32 +1,41 @@
 import React from "react";
 import { ThemeToggle } from "@/components/mode-toggle";
 import { Button } from "@nextui-org/react";
-import { NavbarDropdown } from "@/components/dropdown/navbar-dropdown";
-import { navbarContent } from "@/config/nav-menu";
-import { Logo } from "@/components/logo/logo-minimalist";
+import { Logo } from "@/components/logo/logo-hanging";
 import { NavigationMenuShadcn } from "./navigation-menu-shadcn";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 
 export const SimpleNavbar = () => {
+  const router = useRouter();
   return (
-    <nav className="flex w-full flex-row justify-between">
-      <Logo className="text-rich-black w-[160px] dark:text-white" />
-      <div className="grid w-full grid-flow-row grid-rows-2">
-        <div className="flex justify-between">
-          <div className="hidden basis-4/5 lg:flex">
-            {/* <ul className="mx-auto flex flex-row items-center gap-6">
-              {navbarContent.map((content, index) => (
-                <li key={index}>
-                  <NavbarDropdown content={content} />
-                </li>
-              ))}
-            </ul> */}
-            <NavigationMenuShadcn />
-          </div>
-          <div className="flex items-center justify-end gap-6 lg:basis-1/5">
-            <ThemeToggle />
-            <Button variant="ghost">Se connecter</Button>
-          </div>
-        </div>
+    <nav className="flex w-full flex-row items-start justify-between">
+      <div className="flex cursor-pointer py-4 min-[900px]:hidden">
+        <Sheet key={"left"}>
+          <SheetTrigger>
+            <Menu />
+          </SheetTrigger>
+          <SheetContent side={"left"}>
+            {/* <HamburgerNavbar userName={session?.user.name} /> */}
+          </SheetContent>
+        </Sheet>
+      </div>
+      <Link href={"/"} className="flex basis-1/6 max-[1130px]:hidden">
+        <Logo className="text-rich-black w-[140px] dark:text-white" />
+      </Link>
+      <div className="py-2 max-[900px]:hidden lg:basis-3/6">
+        <NavigationMenuShadcn />
+      </div>
+      <div className="flex basis-2/6 justify-end gap-8 py-2">
+        <ThemeToggle />
+        <Button
+          className="bg-lapis-lazuli text-white"
+          onClick={() => router.push("/login")}
+        >
+          Se connecter
+        </Button>
       </div>
     </nav>
   );
