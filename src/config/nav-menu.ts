@@ -1,25 +1,58 @@
-import type { NavbarItem } from "@/types";
+import type { NavMenuConfig } from "@/types";
 
-export const navbarContent: NavbarItem[] = [
-  { title: "L'association", href: "/association" },
-  { title: "Les collectifs", href: "/collectifs" },
-  {
-    title: "Les activités",
-    items: [
-      { title: "Les sorties", href: "/activites/sorties", icon: "leaf" },
-      {
-        title: "Les séances progression",
-        href: "/activites/seances",
-        icon: "bring-to-front",
-      },
-    ],
-  },
-  { title: "Le mur", href: "/mur" },
-  {
-    title: "Informations pratiques",
-    items: [
-      { title: "Contact", href: "/informations/contact", icon: "contact" },
-      { title: "Horaires", href: "/informations/horaires", icon: "clock" },
-    ],
-  },
-];
+export const navMenuConfig: NavMenuConfig = {
+  association: [
+    {
+      title: "L'assocation",
+      items: [
+        {
+          title: "Les collectifs",
+          href: "/association/collectifs",
+          description: "L'organisation de notre association.",
+        },
+        {
+          title: "Inscriptions",
+          href: "/association/inscriptions",
+          description: "Comment s'inscrire à cordée 13 ?",
+        },
+        {
+          title: "Nous contacter",
+          href: "/association/contact",
+          description: "Liste des contacts du club !",
+        },
+      ],
+    },
+  ],
+  activites: [
+    {
+      title: "Les activités",
+      items: [
+        {
+          title: "Les séances progession",
+          href: "/activites/seances",
+          description: "Informations sur les séances.",
+        },
+        {
+          title: "Les sorties extérieur",
+          href: "/activites/sorties",
+          description: "Les sorties du club !",
+        },
+      ],
+    },
+  ],
+  espace: [
+    {
+      title: "Administration",
+      items: [
+        { title: "Mur", href: "/administration/mur" },
+        { title: "Membres", href: "/administration/membres" },
+        { title: "Matériels", href: "/administration/materiels" },
+      ],
+    },
+  ],
+  links: [
+    { title: "Actualités", href: "/actualites" },
+    { title: "Le mur", href: "/mur" },
+    { title: "Informations pratiques", href: "/informations" },
+  ],
+};

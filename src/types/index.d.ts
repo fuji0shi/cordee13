@@ -23,7 +23,7 @@ export type MenuItem = NavItem & {
 
 export type MainNavItem = NavItem;
 
-export type NavbarItem = {
+export type SidebarNavItem = {
   title: string;
   disabled?: boolean;
   external?: boolean;
@@ -37,3 +37,10 @@ export type NavbarItem = {
       items: MenuItem[];
     }
 );
+
+export type NavMenuConfig = {
+  association: SidebarNavItem[];
+  activites: SidebarNavItem[];
+  espace: SidebarNavItem[];
+  links: MenuItem[];
+};

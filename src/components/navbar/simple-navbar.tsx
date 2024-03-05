@@ -4,6 +4,7 @@ import { Button } from "@nextui-org/react";
 import { NavbarDropdown } from "@/components/dropdown/navbar-dropdown";
 import { navbarContent } from "@/config/nav-menu";
 import { Logo } from "@/components/logo/logo-minimalist";
+import { NavigationMenuShadcn } from "./navigation-menu-shadcn";
 
 export const SimpleNavbar = () => {
   return (
@@ -12,13 +13,14 @@ export const SimpleNavbar = () => {
       <div className="grid w-full grid-flow-row grid-rows-2">
         <div className="flex justify-between">
           <div className="hidden basis-4/5 lg:flex">
-            <ul className="mx-auto flex flex-row items-center gap-6">
+            {/* <ul className="mx-auto flex flex-row items-center gap-6">
               {navbarContent.map((content, index) => (
                 <li key={index}>
                   <NavbarDropdown content={content} />
                 </li>
               ))}
-            </ul>
+            </ul> */}
+            <NavigationMenuShadcn />
           </div>
           <div className="flex items-center justify-end gap-6 lg:basis-1/5">
             <ThemeToggle />
