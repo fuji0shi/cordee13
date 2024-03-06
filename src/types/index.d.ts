@@ -44,3 +44,10 @@ export type NavMenuConfig = {
   espace: SidebarNavItem[];
   links: MenuItem[];
 };
+
+export type ItemInfiniteMovingCards = {
+  category: string;
+  date: string;
+  description?: string;
+  href?: string;
+};

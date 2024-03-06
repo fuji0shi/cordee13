@@ -24,8 +24,10 @@ export function NavigationMenuShadcn() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>
-            <span className="lg:text-md md:text-sm">{association?.title}</span>
+          <NavigationMenuTrigger className="data-[state=open]:text-burnt-sienna px-0">
+            <span className="lg:text-md hover:text-burnt-sienna focus:text-burnt-sienna md:text-sm">
+              {association?.title}
+            </span>
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-2 p-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -53,7 +55,11 @@ export function NavigationMenuShadcn() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>{activites?.title}</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="data-[state=open]:text-burnt-sienna">
+            <span className="lg:text-md hover:text-burnt-sienna focus:text-burnt-sienna md:text-sm">
+              {activites?.title}
+            </span>
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-2 p-2 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {activites?.items?.map((item, i) => (
@@ -64,17 +70,10 @@ export function NavigationMenuShadcn() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        {/* <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Documentation
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem> */}
         {navMenuConfig.links.map((link) => (
           <NavigationMenuItem
             key={link.title}
-            className="hover:text-burnt-sienna  focus:text-burnt-sienna"
+            className="hover:text-burnt-sienna focus:text-burnt-sienna"
           >
             <Link
               key={link.href}

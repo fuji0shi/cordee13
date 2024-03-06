@@ -21,8 +21,9 @@ const config = {
     },
     extend: {
       colors: {
+        "burnt-sienna": "#EE6C4D",
         "lapis-lazuli": "#176087",
-        "rich-black": "#0D1B2A",
+        "rich-black": "#000E1F",
         "moon-stone": "#4CA1BF",
         "gun-metal": "#1d3943",
         border: "hsl(var(--border))",
@@ -73,10 +74,17 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
     },
   },
