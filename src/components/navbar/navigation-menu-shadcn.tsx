@@ -14,6 +14,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import Image from "next/image";
 
 const association = navMenuConfig.association[0];
 const activites = navMenuConfig.activites[0];
@@ -24,23 +25,22 @@ export function NavigationMenuShadcn() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
+          {/* className="data-[state=open]:text-burnt-sienna px-0 */}
           <NavigationMenuTrigger className="data-[state=open]:text-burnt-sienna px-0">
-            <span className="lg:text-md hover:text-burnt-sienna focus:text-burnt-sienna md:text-sm">
-              {association?.title}
-            </span>
+            <span className="lg:text-md md:text-sm">{association?.title}</span>
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-2 p-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <Link
-                    className="from-muted/50 to-muted flex h-full w-full select-none flex-col justify-center rounded-md bg-gradient-to-b p-6 no-underline outline-none focus:shadow-md"
+                    className="bg-muted flex h-full w-full select-none flex-col justify-center rounded-md p-6 no-underline outline-none focus:shadow-md"
                     href="/association"
                   >
-                    <div className="mb-2 mt-4 text-lg font-medium">
+                    <div className="mb-2 mt-4 text-xl font-medium">
                       {"A propos de c13"}
                     </div>
-                    <p className="text-muted-foreground text-xs leading-tight">
+                    <p className="text-muted-foreground text-sm leading-tight">
                       {"Association parisienne d'escalade affiliée à la FSGT"}
                     </p>
                   </Link>
@@ -56,9 +56,7 @@ export function NavigationMenuShadcn() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="data-[state=open]:text-burnt-sienna">
-            <span className="lg:text-md hover:text-burnt-sienna focus:text-burnt-sienna md:text-sm">
-              {activites?.title}
-            </span>
+            <span className="lg:text-md md:text-sm">{activites?.title}</span>
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-2 p-2 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
@@ -70,6 +68,7 @@ export function NavigationMenuShadcn() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+        {/* className="hover:text-lapis-lazuli focus:text-burnt-sienna" */}
         {navMenuConfig.links.map((link) => (
           <NavigationMenuItem
             key={link.title}

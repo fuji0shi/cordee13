@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer className="mx-2 mt-16 flex min-h-20 flex-row justify-between lg:mx-6">
+    <footer className="flex min-h-20 flex-row justify-between">
       <div className="flex items-center">
         <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
           &copy; {"2024 "}

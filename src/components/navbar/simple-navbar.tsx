@@ -12,7 +12,7 @@ export const SimpleNavbar = () => {
   const router = useRouter();
   return (
     <nav className="flex w-full flex-row items-start justify-between">
-      <div className="flex cursor-pointer py-4 min-[910px]:hidden">
+      <div className="flex cursor-pointer py-4 min-[901px]:hidden">
         <Sheet key={"left"}>
           <SheetTrigger>
             <Menu />
@@ -31,9 +31,9 @@ export const SimpleNavbar = () => {
       <div className="flex basis-2/6 justify-end gap-8 py-2">
         <ThemeToggle />
         <Button
-          className="bg-burnt-sienna text-white"
           onClick={() => router.push("/login")}
           radius="full"
+          color="primary"
         >
           Accès membre
         </Button>

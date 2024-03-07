@@ -9,7 +9,7 @@ const Layout = ({ children }: LayoutProps) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
       </Head>
-      <div className="flex min-h-screen flex-col ">{children}</div>
+      <div className="flex min-h-screen flex-col">{children}</div>
     </>
   );
 };
