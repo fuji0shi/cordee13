@@ -11,61 +11,68 @@ export const Home: NextPageWithLayout = () => {
 
   return (
     <>
-      <section className="flex flex-col gap-4">
-        <h2 className="text-xl font-bold">{"A propos de l'association"}</h2>
-        <div className="flex flex-col gap-4 py-2">
-          <p className="text-justify text-sm leading-relaxed">
+      <div className="divide-y-1 flex flex-col">
+        <div className="flex flex-col gap-4 px-2 pb-4">
+          <h2 className="text-2xl font-bold">{"A propos de l'association"}</h2>
+          <p className="line-clamp-2 text-justify leading-relaxed xl:line-clamp-4">
             Cordée 13 est une association d’escalade très récente,{" "}
             <span className="font-bold">créée en juillet 2021</span>. Cordée 13
             est très proche de{" "}
             <a
               href={"https://www.grimpe13.org/"}
               target="_blank"
-              className="font-bold underline"
+              className="hover:text-burnt-sienna font-bold underline"
             >
               Grimpe13
             </a>{" "}
             qui dispose des créneaux d’occupation du gymnase et nous accompagne
             dans le démarrage de l’activité associative.
           </p>
-          <p className="hidden text-justify text-sm leading-relaxed lg:block">
-            Cordée 13 est affiliée à{" "}
-            <a
-              href={"https://www.fsgt.org/"}
-              target="_blank"
-              className="font-bold underline"
-            >
-              la FSGT
-            </a>{" "}
-            et fait partie du comité de Paris.{" "}
-            <a
-              href={"https://www.fsgt.org/"}
-              target="_blank"
-              className="font-bold underline"
-            >
-              La FSGT
-            </a>
-            , fédération omnisports, à une longue et belle histoire, mais aussi
-            un présent dynamique et joyeux avec ses 270 000 adhérents.
-          </p>
+          <Button
+            className="hover:text-burnt-sienna hover:border-burnt-sienna w-32"
+            color="primary"
+            variant="bordered"
+            radius="full"
+            onClick={() => router.push("/association")}
+          >
+            En savoir plus
+          </Button>
         </div>
-        <Button
-          className="w-32"
-          onClick={() => router.push("/association")}
-          color="primary"
-          radius="full"
-        >
-          En savoir plus
-        </Button>
-      </section>
-      <div className="relative h-[280px] md:h-[320px] xl:h-[400px]">
+        <div className="flex flex-col gap-4 px-2 pb-4">
+          <h2 className="mt-4 text-2xl font-bold">Le mur</h2>
+          <p className="line-clamp-2 text-justify leading-relaxed xl:line-clamp-4">
+            {"Cordée 13 est occupe le mur d'escalade du gymnase Glacière."}
+            <br />
+            <span className="font-bold">Adresse : </span>
+            <a
+              target="_blank"
+              className="hover:text-burnt-sienna font-bold underline"
+              href="https://www.google.fr/maps/place/Gymnase+Glaci%C3%A8re/@48.8271194,2.3400289,17z/data=!3m2!4b1!5s0x47e67197e68bf33b:0xc540091566f87c3b!4m6!3m5!1s0x47e67197e2384093:0x5a6c1a42695b53db!8m2!3d48.8271194!4d2.3426038!16s%2Fg%2F11f0l1gfrd?entry=ttu"
+            >
+              Gymnase Glacière - 121 rue de la glacière, 75013 Paris.
+            </a>
+          </p>
+          <Button
+            className="hover:text-burnt-sienna hover:border-burnt-sienna w-32"
+            color="primary"
+            variant="bordered"
+            radius="full"
+            onClick={() => router.push("/mur")}
+          >
+            En savoir plus
+          </Button>
+        </div>
+      </div>
+      <div className="3xl:h-[700px] relative h-[250px] md:h-[380px] lg:h-[400px] 2xl:h-[430px]">
         <Image
           alt="landscape-standing-climber"
-          className="aspect-auto overflow-hidden rounded-md object-cover object-center shadow-lg shadow-black"
-          src="/images/landscape-standing-climber-2-mirror.webp"
+          // className="hidden overflow-hidden object-cover object-center lg:block"
+          className="overflow-hidden rounded-md object-cover object-center shadow-lg shadow-black"
+          src="/images/penhir-center-1200.webp"
           fill
+          priority
         />
-        <div className="absolute left-0 top-0 p-2 lg:flex lg:flex-col lg:p-4">
+        <div className="absolute bottom-1/4 left-0 p-2 lg:top-0 lg:flex lg:flex-col lg:p-4">
           <h1 className="border-b-1 border-white text-6xl font-extrabold text-white">
             <TextGenerateEffect words="Cordée 13" />
           </h1>
@@ -75,37 +82,11 @@ export const Home: NextPageWithLayout = () => {
           />
         </div>
       </div>
-      <div className="relative min-h-[300px]">
-        <Image
-          alt="landscape-standing-climber"
-          className="aspect-auto overflow-hidden rounded-md object-cover object-center shadow-lg shadow-black"
-          src="/images/realistic-climber-sunny.webp"
-          fill
-        />
-      </div>
-      <div className="grid gap-4 xl:grid-cols-3">
-        <div className="flex flex-col">
-          <h2 className="mb-4 text-xl font-bold">Le mur</h2>
-          <div className="flex h-full flex-col justify-between gap-4 py-2">
-            <p className="space-y-4 text-justify text-sm leading-relaxed">
-              {"Cordée 13 est occupe le mur d'escalade du gymnase Glacière."}
-              <br />
-              <span className="underline">Adresse :</span>
-              <br />
-              Gymnase Glacière - 121 rue de la glacière, 75013 Paris.
-            </p>
-            <Button
-              className="w-32"
-              onClick={() => router.push("/mur")}
-              color="primary"
-              radius="full"
-            >
-              En savoir plus
-            </Button>
-          </div>
-        </div>
+
+      <div className="order-first col-span-2 grid min-h-[200px] gap-2 rounded-md p-2 md:order-last md:grid-cols-3 2xl:grid-cols-5 2xl:gap-4">
+        <h2 className="pb-2 text-2xl font-bold">Actualités récentes</h2>
         <SimpleCard
-          className="border-2 bg-transparent shadow-none"
+          className="border-2"
           content={{
             category: "Inscription",
             date: "09/09/2023",
@@ -117,10 +98,31 @@ export const Home: NextPageWithLayout = () => {
             effectué...
           </p>
         </SimpleCard>
-        <SimpleCard className="border-2 bg-transparent shadow-none">
+        <SimpleCard
+          className="border-2"
+          content={{
+            category: "Inscription",
+            date: "09/09/2023",
+            description: "Saison 2023/2024",
+          }}
+        >
+          <p className="text-justify text-sm">
+            Les inscriptions adultes ont débuté. Les tirage au sort sera
+            effectué...
+          </p>
+        </SimpleCard>
+        <SimpleCard className="border-2">
           <Image
             alt="Card background"
-            className="rounded-xl object-cover p-2"
+            className="aspect-auto rounded-md object-cover object-center"
+            src="/images/landscape-moutains-alpes.webp"
+            fill={true}
+          />
+        </SimpleCard>
+        <SimpleCard className="border-2">
+          <Image
+            alt="Card background"
+            className="aspect-auto rounded-md object-cover object-center"
             src="/images/landscape-moutains-alpes.webp"
             fill={true}
           />

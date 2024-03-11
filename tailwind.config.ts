@@ -20,6 +20,9 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        "3xl": "2300px",
+      },
       colors: {
         "allow-orange": "#BF630E",
         sage: "#BABF95",

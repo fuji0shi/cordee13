@@ -20,10 +20,12 @@ export const AuthLayout = ({ children }: LayoutProps) => {
         <div className="relative hidden h-full flex-col p-10 lg:flex">
           <div className="absolute inset-0 flex min-h-screen items-center justify-center">
             <Image
-              alt="Card background"
+              alt="lanscape-moutains"
               className="aspect-auto overflow-hidden object-cover object-center"
               src="/images/realistic-landscape-moutains.webp"
-              fill={true}
+              fill
+              priority
+              sizes="lg"
             />
             <div
               className="absolute left-0 top-0 cursor-pointer p-2 lg:flex lg:flex-col lg:p-5"

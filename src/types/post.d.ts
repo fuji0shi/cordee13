@@ -21,7 +21,7 @@ export interface Post {
   format: string;
   meta: Meta;
   categories: number[];
-  tags: any[];
+  tags: T[];
   _links: Links;
 }
 

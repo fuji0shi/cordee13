@@ -1,4 +1,4 @@
-import HomeLayout from "@/layouts/home-layout";
+import MainLayout from "@/layouts/main-layout";
 import Image from "next/image";
 import type { NextPageWithLayout } from "@/pages/_app";
 import { Button } from "@nextui-org/button";
@@ -60,6 +60,6 @@ export const Actualites: NextPageWithLayout = () => {
 };
 
 Actualites.getLayout = function getLayout(page: React.ReactElement) {
-  return <HomeLayout>{page}</HomeLayout>;
+  return <MainLayout>{page}</MainLayout>;
 };
 export default Actualites;

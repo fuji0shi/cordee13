@@ -1,7 +1,7 @@
 import React from "react";
 import { ThemeToggle } from "@/components/mode-toggle";
 import { Button } from "@nextui-org/button";
-import { Logo } from "@/components/logo/logo-minimalist";
+import { Logo } from "@/components/logo/logo-alphabet";
 import { NavigationMenuShadcn } from "./navigation-menu-shadcn";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -23,7 +23,7 @@ export const SimpleNavbar = () => {
         </Sheet>
       </div>
       <Link href={"/"} className="flex basis-1/6 max-[1130px]:hidden">
-        <Logo className="text-rich-black w-[140px] dark:text-white" />
+        <Logo className="text-rich-black hover:text-burnt-sienna dark:hover:text-burnt-sienna w-[140px] dark:text-white" />
       </Link>
       <div className="py-2 max-[900px]:hidden lg:basis-3/6">
         <NavigationMenuShadcn />

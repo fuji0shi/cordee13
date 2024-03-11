@@ -476,3 +476,291 @@ export default Home;
 //     </div>
 //   </div>
 // </div>
+
+// <section className="bg-muted flex flex-col gap-2 rounded-md p-4">
+//   <div className="flex h-1/2 flex-col justify-between">
+//     <div>
+//       <h2 className="text-xl font-bold">{"A propos de l'association"}</h2>
+//       <p className="line-clamp-2 text-justify text-sm leading-relaxed xl:line-clamp-4">
+//         Cordée 13 est une association d’escalade très récente,{" "}
+//         <span className="font-bold">créée en juillet 2021</span>. Cordée
+//         13 est très proche de{" "}
+//         <a
+//           href={"https://www.grimpe13.org/"}
+//           target="_blank"
+//           className="hover:text-burnt-sienna font-bold underline"
+//         >
+//           Grimpe13
+//         </a>{" "}
+//         qui dispose des créneaux d’occupation du gymnase et nous
+//         accompagne dans le démarrage de l’activité associative.
+//       </p>
+//     </div>
+//     <Button
+//       className="w-32"
+//       onClick={() => router.push("/association")}
+//       color="primary"
+//       radius="full"
+//     >
+//       En savoir plus
+//     </Button>
+//   </div>
+
+//   <div className="flex h-1/2 flex-col justify-between">
+//     <div>
+//       <h2 className="text-xl font-bold">Le mur</h2>
+//       <p className="line-clamp-2 text-justify text-sm leading-relaxed xl:line-clamp-4">
+//         {"Cordée 13 est occupe le mur d'escalade du gymnase Glacière."}
+//         <br />
+//         <span className="font-bold">Adresse : </span>
+//         <a
+//           target="_blank"
+//           className="hover:text-burnt-sienna font-bold underline"
+//           href="https://www.google.fr/maps/place/Gymnase+Glaci%C3%A8re/@48.8271194,2.3400289,17z/data=!3m2!4b1!5s0x47e67197e68bf33b:0xc540091566f87c3b!4m6!3m5!1s0x47e67197e2384093:0x5a6c1a42695b53db!8m2!3d48.8271194!4d2.3426038!16s%2Fg%2F11f0l1gfrd?entry=ttu"
+//         >
+//           Gymnase Glacière - 121 rue de la glacière, 75013 Paris.
+//         </a>
+//       </p>
+//     </div>
+//     <Button
+//       className="w-32"
+//       onClick={() => router.push("/mur")}
+//       color="primary"
+//       radius="full"
+//     >
+//       En savoir plus
+//     </Button>
+//   </div>
+// </section>
+// <div className="relative h-[280px] md:h-[320px] xl:h-[450px]">
+//   <Image
+//     alt="landscape-standing-climber"
+//     className="aspect-auto overflow-hidden rounded-md object-cover object-center"
+//     src="/images/landscape-standing-climber-2-mirror.webp"
+//     fill
+//     priority
+//     sizes="lg"
+//   />
+//   <div className="absolute bottom-1/4 left-0 p-2 lg:top-0 lg:flex lg:flex-col lg:p-4">
+//     <h1 className="border-b-1 border-white text-6xl font-extrabold text-white">
+//       <TextGenerateEffect words="Cordée 13" />
+//     </h1>
+//     <TextGenerateEffect
+//       words="Association parisienne d'escalade affiliée à la FSGT"
+//       className="font-bold text-white"
+//     />
+//   </div>
+// </div>
+// {/* <div className="relative min-h-[300px]">
+//   <Image
+//     alt="landscape-standing-climber"
+//     className="aspect-auto overflow-hidden rounded-md object-cover object-center shadow-lg shadow-black"
+//     src="/images/realistic-climber-sunny.webp"
+//     fill
+//   />
+// </div> */}
+// <h2 className="text-xl font-bold">{"Dernières actualités du club"}</h2>
+// <section className="col-span-2 grid gap-4 xl:grid-cols-4">
+//   <SimpleCard
+//     className="border-2 bg-transparent shadow-lg shadow-black"
+//     content={{
+//       category: "Inscription",
+//       date: "09/09/2023",
+//       description: "Saison 2023/2024",
+//     }}
+//   >
+//     <p className="text-justify text-sm">
+//       Les inscriptions adultes ont débuté. Les tirage au sort sera
+//       effectué...
+//     </p>
+//   </SimpleCard>
+//   <SimpleCard
+//     className="border-2 bg-transparent shadow-lg shadow-black"
+//     content={{
+//       category: "Inscription",
+//       date: "09/09/2023",
+//       description: "Saison 2023/2024",
+//     }}
+//   >
+//     <p className="text-justify text-sm">
+//       Les inscriptions adultes ont débuté. Les tirage au sort sera
+//       effectué...
+//     </p>
+//   </SimpleCard>
+//   <SimpleCard className="border-2 bg-transparent shadow-lg shadow-black">
+//     <Image
+//       alt="Card background"
+//       className="rounded-xl object-cover p-2"
+//       src="/images/landscape-moutains-alpes.webp"
+//       fill={true}
+//     />
+//   </SimpleCard>
+//   <SimpleCard className="border-2 bg-transparent shadow-lg shadow-black">
+//     <Image
+//       alt="Card background"
+//       className="rounded-xl object-cover p-2"
+//       src="/images/landscape-moutains-alpes.webp"
+//       fill={true}
+//     />
+//   </SimpleCard>
+//   {/* <div className="flex flex-col">
+
+//     </div>
+//   </div> */}
+// </section>
+
+// <div className="divide-y-1 flex flex-col gap-6">
+//   <div className="flex flex-col gap-4">
+//     <h2 className="text-2xl font-bold">{"A propos de l'association"}</h2>
+//     <p className="line-clamp-2 text-justify leading-relaxed xl:line-clamp-4">
+//       Cordée 13 est une association d’escalade très récente,{" "}
+//       <span className="font-bold">créée en juillet 2021</span>. Cordée 13
+//       est très proche de{" "}
+//       <a
+//         href={"https://www.grimpe13.org/"}
+//         target="_blank"
+//         className="hover:text-burnt-sienna font-bold underline"
+//       >
+//         Grimpe13
+//       </a>{" "}
+//       qui dispose des créneaux d’occupation du gymnase et nous accompagne
+//       dans le démarrage de l’activité associative.
+//     </p>
+//     <Button
+//       className="hover:text-burnt-sienna hover:border-burnt-sienna w-32"
+//       color="primary"
+//       variant="bordered"
+//       radius="full"
+//       onClick={() => router.push("/association")}
+//     >
+//       En savoir plus
+//     </Button>
+//   </div>
+
+//   <div className="flex flex-col gap-4">
+//     <h2 className="mt-4 text-2xl font-bold">Le mur</h2>
+//     <p className="line-clamp-2 text-justify leading-relaxed xl:line-clamp-4">
+//       {"Cordée 13 est occupe le mur d'escalade du gymnase Glacière."}
+//       <br />
+//       <span className="font-bold">Adresse : </span>
+//       <a
+//         target="_blank"
+//         className="hover:text-burnt-sienna font-bold underline"
+//         href="https://www.google.fr/maps/place/Gymnase+Glaci%C3%A8re/@48.8271194,2.3400289,17z/data=!3m2!4b1!5s0x47e67197e68bf33b:0xc540091566f87c3b!4m6!3m5!1s0x47e67197e2384093:0x5a6c1a42695b53db!8m2!3d48.8271194!4d2.3426038!16s%2Fg%2F11f0l1gfrd?entry=ttu"
+//       >
+//         Gymnase Glacière - 121 rue de la glacière, 75013 Paris.
+//       </a>
+//     </p>
+//     <Button
+//       className="hover:text-burnt-sienna hover:border-burnt-sienna w-32"
+//       color="primary"
+//       variant="bordered"
+//       radius="full"
+//       onClick={() => router.push("/mur")}
+//     >
+//       En savoir plus
+//     </Button>
+//   </div>
+
+//   <div className="hidden gap-4 2xl:flex 2xl:flex-col">
+//     <h2 className="mt-4 text-2xl font-bold">Dernières actualités</h2>
+//     <div className="grid gap-2 2xl:grid-cols-2 2xl:gap-4">
+//       <SimpleCard className="border-2">
+//         <Image
+//           alt="Card background"
+//           className="rounded-xl object-cover p-2"
+//           src="/images/landscape-moutains-alpes.webp"
+//           fill={true}
+//         />
+//       </SimpleCard>
+//       <SimpleCard
+//         className="border-2"
+//         content={{
+//           category: "Inscription",
+//           date: "09/09/2023",
+//           description: "Saison 2023/2024",
+//         }}
+//       >
+//         <p className="text-justify text-sm">
+//           Les inscriptions adultes ont débuté. Les tirage au sort sera
+//           effectué...
+//         </p>
+//       </SimpleCard>
+//       {/* <SimpleCard
+//         className="border-2"
+//         content={{
+//           category: "Inscription",
+//           date: "09/09/2023",
+//           description: "Saison 2023/2024",
+//         }}
+//       >
+//         <p className="text-justify text-sm">
+//           Les inscriptions adultes ont débuté. Les tirage au sort sera
+//           effectué...
+//         </p>
+//       </SimpleCard> */}
+//     </div>
+//   </div>
+// </div>
+
+// <div className="flex-row-reverse">
+//   <div className="relative h-[250px] md:h-[400px] lg:h-[600px] lg:w-[600px] xl:h-[650px] xl:w-[650px] 2xl:h-[750px] 2xl:w-[750px]">
+//     <Image
+//       alt="landscape-standing-climber"
+//       // className="hidden overflow-hidden object-cover object-center lg:block"
+//       className="overflow-hidden rounded-md object-cover object-center lg:block"
+//       src="/images/square-standing-climber.webp"
+//       fill
+//       priority
+//     />
+//     <div className="absolute bottom-1/4 left-0 p-2 lg:bottom-1/3 lg:left-6 lg:flex lg:flex-col lg:p-4 xl:left-10">
+//       <h1 className="border-b-1 border-white text-6xl font-extrabold text-white">
+//         <TextGenerateEffect words="Cordée 13" />
+//       </h1>
+//       <TextGenerateEffect
+//         words="Association parisienne d'escalade affiliée à la FSGT"
+//         className="font-bold text-white"
+//       />
+//     </div>
+//   </div>
+// </div>
+
+// <div className="col-span-2 gap-4 2xl:hidden">
+//   <h2 className="mt-4 text-2xl font-bold">Dernières actualités</h2>
+//   <div className="grid gap-2 md:grid-cols-3 md:gap-4">
+//     <SimpleCard className="border-2">
+//       <Image
+//         alt="Card background"
+//         className="rounded-xl object-cover p-2"
+//         src="/images/landscape-moutains-alpes.webp"
+//         fill={true}
+//       />
+//     </SimpleCard>
+//     <SimpleCard
+//       className="border-2"
+//       content={{
+//         category: "Inscription",
+//         date: "09/09/2023",
+//         description: "Saison 2023/2024",
+//       }}
+//     >
+//       <p className="text-justify text-sm">
+//         Les inscriptions adultes ont débuté. Les tirage au sort sera
+//         effectué...
+//       </p>
+//     </SimpleCard>
+//     <SimpleCard
+//       className="border-2"
+//       content={{
+//         category: "Inscription",
+//         date: "09/09/2023",
+//         description: "Saison 2023/2024",
+//       }}
+//     >
+//       <p className="text-justify text-sm">
+//         Les inscriptions adultes ont débuté. Les tirage au sort sera
+//         effectué...
+//       </p>
+//     </SimpleCard>
+//   </div>
+// </div>

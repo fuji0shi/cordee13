@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
+import { DoorOpen } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 type Content = {
@@ -21,20 +22,24 @@ export const SimpleCard = (props: SimpleCardProps) => {
     className,
     content = {
       category: "Sorties",
-      date: "Posté le 23/03/2024",
-      description: "Sortie Haute Roche",
+      date: "23/03/2024",
+      description: "Sortie Haute",
     },
   } = props;
   return (
-    <Card className={cn(`py-2`, className)}>
-      <CardHeader className="flex-col items-start px-4 pb-0 pt-2">
-        <p className="text-tiny font-bold uppercase">{content.category}</p>
-        <small className="text-default-500">{content.date}</small>
-        <h4 className="text-large font-bold">{content.description}</h4>
-      </CardHeader>
-      <CardBody className="min-h-[100px] cursor-pointer overflow-visible">
-        {children}
-      </CardBody>
-    </Card>
+    <div
+      className={cn(`hover:bg-muted cursor-pointer rounded-md p-4`, className)}
+    >
+      <div className="flex-col items-start">
+        <p className="text-tiny flex w-full flex-row justify-between font-bold uppercase">
+          {content.category} <DoorOpen />
+        </p>
+        <small className="text-default-500">Posté le {content.date}</small>
+        <h4 className="text-large mb-1 line-clamp-2 font-bold">
+          {content.description}
+        </h4>
+      </div>
+      <div className="relative min-h-[150px] overflow-visible">{children}</div>
+    </div>
   );
 };

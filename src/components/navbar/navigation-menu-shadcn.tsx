@@ -27,7 +27,7 @@ export function NavigationMenuShadcn() {
         <NavigationMenuItem>
           {/* className="data-[state=open]:text-burnt-sienna px-0 */}
           <NavigationMenuTrigger className="data-[state=open]:text-burnt-sienna px-0">
-            <span className="lg:text-md md:text-sm">{association?.title}</span>
+            <span className="md:text-sm lg:text-lg">{association?.title}</span>
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-2 p-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -56,7 +56,7 @@ export function NavigationMenuShadcn() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="data-[state=open]:text-burnt-sienna">
-            <span className="lg:text-md md:text-sm">{activites?.title}</span>
+            <span className="md:text-sm lg:text-lg">{activites?.title}</span>
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-2 p-2 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">

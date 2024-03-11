@@ -65,4 +65,5 @@ export type RouterInputs = inferRouterInputs<AppRouter>;
  *
  * @example type HelloOutput = RouterOutputs['example']['hello']
  */
+export type RoutesOutput = RouterOutputs["content"]["getStatsVoies"];
 export type RouterOutputs = inferRouterOutputs<AppRouter>;
