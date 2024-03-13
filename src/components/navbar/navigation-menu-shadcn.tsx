@@ -2,7 +2,7 @@ import * as React from "react";
 import { navMenuConfig } from "@/config/nav-menu";
 import type { MenuItem } from "@/types";
 import Link from "next/link";
-
+import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 import {
@@ -46,10 +46,13 @@ export function NavigationMenuShadcn() {
                   </Link>
                 </NavigationMenuLink>
               </li>
-              {association?.items?.map((item, i) => (
+              {/* {association?.items?.map((item, i) => (
                 <ListItem href={item.href} title={item.title} key={i}>
                   <span className="text-xs">{item.description}</span>
                 </ListItem>
+              ))} */}
+              {association?.items?.map((asso) => (
+                <ListItem key={asso.title} {...asso} />
               ))}
             </ul>
           </NavigationMenuContent>
@@ -60,10 +63,8 @@ export function NavigationMenuShadcn() {
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-2 p-2 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {activites?.items?.map((item, i) => (
-                <ListItem href={item.href} title={item.title} key={i}>
-                  <span className="text-xs">{item.description}</span>
-                </ListItem>
+              {activites?.items?.map((ac) => (
+                <ListItem key={ac.title} {...ac} />
               ))}
             </ul>
           </NavigationMenuContent>
@@ -88,28 +89,47 @@ export function NavigationMenuShadcn() {
   );
 }
 
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+const ListItem: React.FC<MenuItem> = ({
+  title,
+  href,
+  description,
+  launched,
+  disabled,
+  external,
+}) => {
+  const target = external ? "_blank" : undefined;
+
   return (
     <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors",
-            className,
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
+      <Link
+        href={disabled ? "#" : href}
+        target={target}
+        className={cn(
+          "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors",
+          disabled
+            ? "text-muted-foreground hover:text-muted-foreground hover:bg-transparent"
+            : "",
+        )}
+      >
+        <div className="text-sm font-medium leading-none">
+          <span className="mr-2">{title}</span>
+          {disabled ? (
+            <Badge
+              variant="secondary"
+              className="h-5 px-1.5 text-xs font-medium"
+            >
+              Bientôt
+            </Badge>
+          ) : null}
+          {launched ? (
+            <Badge className="h-5 px-1.5 text-xs font-medium">Nouveau</Badge>
+          ) : null}
+        </div>
+        <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
+          {description}
+        </p>
+      </Link>
     </li>
   );
-});
+};
 ListItem.displayName = "ListItem";

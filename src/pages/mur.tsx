@@ -4,12 +4,13 @@ import { Divider } from "@nextui-org/react";
 import Chart from "@/components/chart/routes-bar-chart";
 import Image from "next/image";
 import { api } from "@/utils/api";
+import { TabsDemo } from "@/components/animated-tabs";
 
 export const Mur: NextPageWithLayout = () => {
   const stats = api.content.getStatsVoies.useQuery();
   const { data } = stats;
   return (
-    <div className="grid lg:grid-cols-2 xl:grid-cols-[6fr_4fr] xl:gap-6">
+    <div className="grid gap-2 lg:grid-cols-2 xl:grid-cols-[6fr_5fr] xl:gap-12">
       <section className="flex flex-col gap-4">
         <div>
           <h1 className="pb-2 text-2xl font-bold">Le mur</h1>
@@ -27,7 +28,7 @@ export const Mur: NextPageWithLayout = () => {
         </p>
         <div className="flex flex-col gap-6">
           <h2 className="text-lg font-bold">Répartition des voies</h2>
-          <div className="relative h-[250px] md:h-[300px] lg:h-[350px]">
+          <div className="relative h-[250px] md:h-[280px] lg:h-[300px]">
             <Chart data={data} dataKey="nombre" xDataKey="cotation" />
           </div>
         </div>
@@ -39,7 +40,7 @@ export const Mur: NextPageWithLayout = () => {
             Chaque membre doit être équipé avec son propre matériel, dès son
             inscription à l’association.
           </p>
-          <ul>
+          <ul className="list-disc pl-6 leading-relaxed">
             <li>
               Un baudrier (les baudriers avec 2 petits pontets reliés par un
               pontet mobile sont beaucoup plus confortables, à porter et en cas
@@ -52,7 +53,8 @@ export const Mur: NextPageWithLayout = () => {
           <p>L’utilisation de magnésie en poudre n’est pas autorisée.</p>
         </div>
       </section>
-      <div className="flex flex-col">
+      <TabsDemo />
+      {/* <div className="flex flex-col">
         <div>
           <div className="3xl:h-[700px] relative h-[250px] md:h-[380px] lg:h-[400px] 2xl:h-[430px]">
             <Image
@@ -81,7 +83,7 @@ export const Mur: NextPageWithLayout = () => {
             <p className="text-muted-foreground text-sm">La dalle</p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

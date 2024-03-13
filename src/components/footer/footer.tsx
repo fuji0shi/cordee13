@@ -3,11 +3,7 @@ export const Footer = () => {
     <footer className="flex min-h-20 flex-row justify-between">
       <div className="flex items-center">
         <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
-          &copy; {"2024 "}
-          <a href="#" className="hover:underline">
-            {"fuji0shi "}
-          </a>
-          - Tous droits réservés
+          © 2024 fuji0shi. All rights reserved.
         </span>
       </div>
       <ul className="mb-6 hidden items-center gap-8 text-sm font-medium text-gray-500 sm:mb-0 lg:flex lg:flex-wrap dark:text-gray-400">

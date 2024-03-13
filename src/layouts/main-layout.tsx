@@ -1,8 +1,14 @@
 import SimpleNavbar from "@/components/navbar/simple-navbar";
 import BaseLayout from "@/layouts/base-layout";
 import type { LayoutProps } from "@/types";
+import { useRouter } from "next/router";
 
 export const MainLayout = ({ children }: LayoutProps) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
   return (
     <BaseLayout>
       <header className="sticky top-0 z-10 flex w-full items-center px-2 backdrop-blur-lg md:px-6 lg:px-40">

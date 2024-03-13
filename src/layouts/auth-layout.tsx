@@ -3,6 +3,7 @@ import type { LayoutProps } from "@/types";
 import { ThemeToggle } from "@/components/mode-toggle";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 export const AuthLayout = ({ children }: LayoutProps) => {
   const router = useRouter();
@@ -31,18 +32,19 @@ export const AuthLayout = ({ children }: LayoutProps) => {
               className="absolute left-0 top-0 cursor-pointer p-2 lg:flex lg:flex-col lg:p-5"
               onClick={() => router.push("/")}
             >
-              <h1 className="border-b-1 border-white text-6xl font-extrabold text-white">
-                Cordée 13
+              <h1 className="border-b-1 border-white text-7xl font-extrabold text-white">
+                <TextGenerateEffect words="Cordée 13" />
               </h1>
-              <p className="text-white">
-                {"Association parisienne d'escalade affiliée à la FSGT"}
-              </p>
+              <TextGenerateEffect
+                words="Association parisienne d'escalade affiliée à la FSGT"
+                className="text-lg font-bold text-white"
+              />
             </div>
           </div>
           <div className="relative z-20 mt-auto">
             <blockquote className="space-y-2">
               <footer className="text-xs">
-                © 2024 idiLik. All rights reserved.
+                © 2024 fuji0shi. All rights reserved.
               </footer>
             </blockquote>
           </div>

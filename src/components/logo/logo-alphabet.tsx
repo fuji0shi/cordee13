@@ -7,7 +7,7 @@ type LogoProps = {
 export const Logo = (props: LogoProps) => {
   const { className } = props;
   return (
-    <div className={cn("cursor-pointer", className)}>
+    <div className={cn(className)}>
       <svg
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"

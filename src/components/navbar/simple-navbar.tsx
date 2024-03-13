@@ -23,7 +23,7 @@ export const SimpleNavbar = () => {
         </Sheet>
       </div>
       <Link href={"/"} className="flex basis-1/6 max-[1130px]:hidden">
-        <Logo className="text-rich-black hover:text-burnt-sienna dark:hover:text-burnt-sienna w-[140px] dark:text-white" />
+        <Logo className="text-rich-black w-[140px] cursor-pointer dark:text-white" />
       </Link>
       <div className="py-2 max-[900px]:hidden lg:basis-3/6">
         <NavigationMenuShadcn />
