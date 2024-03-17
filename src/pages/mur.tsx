@@ -7,7 +7,10 @@ import { api } from "@/utils/api";
 import { TabsDemo } from "@/components/animated-tabs";
 
 export const Mur: NextPageWithLayout = () => {
-  const stats = api.content.getStatsVoies.useQuery();
+  const stats = api.content.getStatsVoies.useQuery(undefined, {
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
+  });
   const { data } = stats;
   return (
     <div className="grid gap-2 lg:grid-cols-2 xl:grid-cols-[6fr_5fr] xl:gap-12">

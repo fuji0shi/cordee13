@@ -6,6 +6,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import { type NextPage } from "next";
 import { api } from "@/utils/api";
 import { ThemeProvider } from "@/components/theme-provider";
+import RouteChangeListener from "@/components/route-change-listener";
 
 import "@/styles/globals.css";
 
@@ -31,6 +32,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
           enableSystem
           disableTransitionOnChange
         >
+          <RouteChangeListener />
           {layout}
         </ThemeProvider>
       </NextUIProvider>

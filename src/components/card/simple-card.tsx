@@ -1,12 +1,12 @@
 import React from "react";
-import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import { DoorOpen } from "lucide-react";
+import { useRouter } from "next/router";
 
 import { cn } from "@/lib/utils";
 type Content = {
-  category: string;
-  date: string;
-  description?: string;
+  category?: string | null;
+  date?: string | null;
+  description?: string | null;
   href?: string;
 };
 
@@ -26,20 +26,23 @@ export const SimpleCard = (props: SimpleCardProps) => {
       description: "Sortie Haute",
     },
   } = props;
+  const router = useRouter();
   return (
     <div
-      className={cn(`hover:bg-muted cursor-pointer rounded-md p-4`, className)}
+      className={cn(
+        `flex cursor-pointer flex-col justify-between rounded-md p-4 hover:bg-muted`,
+        className,
+      )}
+      onClick={() => router.push("/actualites")}
     >
-      <div className="flex-col items-start">
-        <p className="text-tiny flex w-full flex-row justify-between font-bold uppercase">
+      <div className="flex flex-col">
+        <p className="flex w-full flex-row justify-between text-tiny font-bold uppercase">
           {content.category} <DoorOpen />
         </p>
         <small className="text-default-500">Posté le {content.date}</small>
-        <h4 className="text-large mb-1 line-clamp-2 font-bold">
-          {content.description}
-        </h4>
+        <h4 className="mb-2 line-clamp-3 font-bold">{content.description}</h4>
       </div>
-      <div className="relative min-h-[150px] overflow-visible">{children}</div>
+      <div className="relative min-h-[110px] overflow-visible">{children}</div>
     </div>
   );
 };

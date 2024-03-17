@@ -1,12 +1,12 @@
 export const Footer = () => {
   return (
-    <footer className="flex min-h-20 flex-row justify-between">
+    <footer className="flex min-h-16 flex-row justify-between border-t-1">
       <div className="flex items-center">
-        <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+        <span className="block text-sm text-gray-500 dark:text-gray-400 sm:text-center">
           © 2024 fuji0shi. All rights reserved.
         </span>
       </div>
-      <ul className="mb-6 hidden items-center gap-8 text-sm font-medium text-gray-500 sm:mb-0 lg:flex lg:flex-wrap dark:text-gray-400">
+      <ul className="mb-4 hidden items-center gap-8 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mb-0 lg:flex lg:flex-wrap">
         <li>
           <a href="#" className="hover:underline">
             En savoir plus
