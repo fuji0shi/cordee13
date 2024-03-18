@@ -5,3 +5,7 @@ export function deleteAfter(str: string, strToDelete: string): string {
   }
   return str;
 }
+
+export function generateSixDigitsNumber(): number {
+  return Math.floor(100000 + Math.random() * 900000);
+}

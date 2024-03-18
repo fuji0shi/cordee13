@@ -12,7 +12,7 @@ export function TabsDemo() {
             src="/images/mur-2-800.webp"
             alt="dummy image"
             fill
-            className="absolute inset-x-0 -bottom-10  mx-auto h-[60%] w-[90%] rounded-xl object-cover object-left-top md:h-[90%]"
+            className="absolute inset-x-0 -bottom-10  mx-auto h-[60%] w-[90%] rounded-xl object-cover object-left-top md:h-[100%]"
           />
         </div>
       ),
@@ -52,7 +52,7 @@ export function TabsDemo() {
   ];
 
   return (
-    <div className="relative flex h-[400px] w-full max-w-5xl flex-col items-start  justify-start [perspective:1000px] md:h-[700px]">
+    <div className="relative flex h-[400px] w-full max-w-5xl flex-col items-start justify-start [perspective:1000px] md:h-[700px]">
       <Tabs tabs={tabs} />
     </div>
   );

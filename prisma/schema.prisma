@@ -68,3 +68,33 @@ model StatVoies {
     cotation String
     nombre   Int
 }
+
+model Membres {
+    id                  String  @id @default(cuid())
+    civilite            String
+    prenom              String
+    nom                 String
+    date_naissance      String
+    email               String
+    tel                 String
+    adresse             String
+    code_postal         String
+    ville               String
+    licence_fsgt        String
+    autre_club          String?
+    nom_parent          String?
+    licence_fsgt_parent String?
+    nb_enfant           Int?
+    contact_urgence     String?
+    contact_urgence_tel String?
+    implication_club    String?
+    paiement            String?
+    saison              String
+}
+
+model RegisterSendMail {
+    id      String   @id @default(cuid())
+    email   String
+    link    String
+    expires DateTime
+}

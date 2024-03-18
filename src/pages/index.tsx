@@ -69,11 +69,11 @@ export const Home: NextPageWithLayout = () => {
           </Button>
         </div>
       </div>
-      <div className="relative h-[250px] md:h-[360px] lg:h-[320px] 2xl:h-[350px] 3xl:h-[700px]">
+      <div className="relative h-[250px] md:h-[360px] lg:h-[320px] 2xl:h-[400px] 3xl:h-[700px]">
         <Image
           alt="landscape-penhir-center"
-          // className="hidden overflow-hidden object-cover object-center lg:block"
-          className="overflow-hidden rounded-md object-cover object-center shadow-lg shadow-black"
+          className="overflow-hidden rounded-md object-cover object-center"
+          // className="overflow-hidden rounded-md object-cover object-center shadow-lg shadow-black"
           src="/images/penhir-center-1200.webp"
           fill
           priority
@@ -89,7 +89,7 @@ export const Home: NextPageWithLayout = () => {
         </div>
       </div>
 
-      <div className="order-first col-span-2 grid min-h-[200px] gap-2 rounded-md p-2 md:order-last md:grid-cols-3 2xl:grid-cols-5 2xl:gap-4">
+      <div className="order-first col-span-2 grid min-h-[200px] gap-2 rounded-md p-2 md:order-last md:grid-cols-3 2xl:h-1/2 2xl:grid-cols-5 2xl:gap-4">
         <h2 className="pb-2 text-2xl font-bold">Actualités récentes</h2>
         {isLoading && <LoadingDiv />}
         {isSuccess &&

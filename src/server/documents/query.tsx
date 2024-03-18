@@ -2,7 +2,7 @@ import { graphql } from "@/gql";
 
 export const postsQueryDocument = graphql(`
   query GetPostsEdges {
-    posts {
+    posts(first: 4) {
       edges {
         node {
           id
@@ -22,7 +22,7 @@ export const postsQueryDocument = graphql(`
 
 export const postsCompleteQueryDocument = graphql(`
   query GetPosts {
-    posts(first: 4) {
+    posts {
       edges {
         node {
           date

@@ -2,11 +2,13 @@ export type SidebarAnchorProps = {
   title: string;
   href: string;
 };
+type AuthType = "login" | "register" | "forgot-password" | "reset-password";
 
 export type LayoutProps = {
   children: React.ReactNode;
   isRightSidebar?: boolean;
   rightSidebar?: SidebarAnchorProps[];
+  auth?: AuthType;
 };
 
 export type NavItem = {
@@ -50,4 +52,11 @@ export type ItemInfiniteMovingCards = {
   date: string;
   description?: string;
   href?: string;
+};
+
+import { type SendMailOptions } from "nodemailer";
+export type SendMailProps = {
+  toEmail: string;
+  subject: string;
+  content: SendMailOptions["html"];
 };

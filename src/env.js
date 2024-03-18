@@ -32,6 +32,8 @@ export const env = createEnv({
     GRAPHQL_ENDPOINT: z.string(),
     WORDPRESS_USERNAME: z.string(),
     WORDPRESS_PASSWORD: z.string(),
+    NODEMAILER_EMAIL: z.string(),
+    NODEMAILER_PASSWORD: z.string(),
   },
 
   /**
@@ -56,6 +58,8 @@ export const env = createEnv({
     GRAPHQL_ENDPOINT: process.env.GRAPHQL_ENDPOINT,
     WORDPRESS_USERNAME: process.env.WORDPRESS_USERNAME,
     WORDPRESS_PASSWORD: process.env.WORDPRESS_PASSWORD,
+    NODEMAILER_EMAIL: process.env.NODEMAILER_EMAIL,
+    NODEMAILER_PASSWORD: process.env.NODEMAILER_PASSWORD,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

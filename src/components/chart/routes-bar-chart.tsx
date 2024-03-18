@@ -18,13 +18,13 @@ type ChartProps = {
 function getCotationColor(cotation: string) {
   switch (cotation.charAt(0)) {
     case "4":
-      return "fill-yellow-400";
+      return "fill-green-500";
     case "5":
-      return "fill-blue-400";
+      return "fill-blue-500";
     case "6":
-      return "fill-violet-400";
+      return "fill-violet-500";
     case "7":
-      return "fill-red-400";
+      return "fill-red-500";
     default:
       return "fill-primary";
   }

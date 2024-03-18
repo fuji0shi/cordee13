@@ -13,7 +13,7 @@ export const Mur: NextPageWithLayout = () => {
   });
   const { data } = stats;
   return (
-    <div className="grid gap-2 lg:grid-cols-2 xl:grid-cols-[6fr_5fr] xl:gap-12">
+    <div className="grid gap-2 py-4 md:gap-8 lg:grid-cols-2 xl:grid-cols-[4fr_6fr] xl:gap-12">
       <section className="flex flex-col gap-4">
         <div>
           <h1 className="pb-2 text-2xl font-bold">Le mur</h1>
@@ -29,17 +29,11 @@ export const Mur: NextPageWithLayout = () => {
             "Les ouvertures de voies sont effectuées par le collectif Mur et ont lieu tout au long de l'année."
           }
         </p>
-        <div className="flex flex-col gap-6">
-          <h2 className="text-lg font-bold">Répartition des voies</h2>
-          <div className="relative h-[250px] md:h-[280px] lg:h-[300px]">
-            <Chart data={data} dataKey="nombre" xDataKey="cotation" />
-          </div>
-        </div>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4">
           <h2 className="text-lg font-bold">
             Matériel nécessaire pour grimper
           </h2>
-          <p>
+          <p className="text-justify leading-relaxed">
             Chaque membre doit être équipé avec son propre matériel, dès son
             inscription à l’association.
           </p>
@@ -53,40 +47,23 @@ export const Mur: NextPageWithLayout = () => {
             <li>Un mousqueton à vis</li>
             <li>Une paire de chaussons confortable (confortable !)</li>
           </ul>
-          <p>L’utilisation de magnésie en poudre n’est pas autorisée.</p>
+          <p className="text-justify leading-relaxed">
+            L’utilisation de magnésie en poudre n’est pas autorisée.
+          </p>
         </div>
       </section>
-      <TabsDemo />
-      {/* <div className="flex flex-col">
-        <div>
-          <div className="3xl:h-[700px] relative h-[250px] md:h-[380px] lg:h-[400px] 2xl:h-[430px]">
-            <Image
-              alt="mur-2"
-              className="overflow-hidden rounded-md object-cover object-center"
-              src="/images/mur-2-800.webp"
-              fill
-              priority
-            />
-          </div>
-          <div className="flex flex-row-reverse">
-            <p className="text-muted-foreground text-sm">Le dévers</p>
-          </div>
+      <section className="flex flex-col gap-8 pb-4">
+        <div className="flex items-baseline gap-2">
+          <h2 className="text-lg font-bold">Répartition des voies</h2>
+          <p className="text-xs text-muted-foreground">
+            (Dernière mise à jour le 13/03/2024)
+          </p>
         </div>
-        <div>
-          <div className="3xl:h-[700px] relative h-[250px] md:h-[380px] lg:h-[400px] 2xl:h-[430px]">
-            <Image
-              alt="mur-2"
-              className="overflow-hidden rounded-md object-cover object-center"
-              src="/images/mur-4-800.webp"
-              fill
-              priority
-            />
-          </div>
-          <div className="flex flex-row-reverse">
-            <p className="text-muted-foreground text-sm">La dalle</p>
-          </div>
+        <div className="relative h-[250px] md:h-[280px] lg:h-[300px]">
+          <Chart data={data} dataKey="nombre" xDataKey="cotation" />
         </div>
-      </div> */}
+        <TabsDemo />
+      </section>
     </div>
   );
 };

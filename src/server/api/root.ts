@@ -1,5 +1,7 @@
 import { contentRouter } from "@/server/api/routers/content";
 import { graphqlRouter } from "@/server/api/routers/wordpress-graphql";
+import { sendmailRouter } from "@/server/api/routers/send-mail";
+import { authRouter } from "@/server/api/routers/auth";
 import { createTRPCRouter } from "@/server/api/trpc";
 
 /**
@@ -10,6 +12,8 @@ import { createTRPCRouter } from "@/server/api/trpc";
 export const appRouter = createTRPCRouter({
   content: contentRouter,
   wordpress: graphqlRouter,
+  mail: sendmailRouter,
+  auth: authRouter,
 });
 
 // export type definition of API

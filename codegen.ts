@@ -1,5 +1,5 @@
 import type { CodegenConfig } from "@graphql-codegen/cli";
-import { env } from "./src/env";
+import { WORDPRESS_PASSWORD, WORDPRESS_USERNAME } from "./src/config/code-gen";
 
 const config: CodegenConfig = {
   overwrite: true,
@@ -7,7 +7,7 @@ const config: CodegenConfig = {
     {
       "https://cordee13.fr/graphql": {
         headers: {
-          Authorization: `Basic ${btoa(`WORDPRESS_USERNAME:WORDPRESS_PASSWORD`)}`,
+          Authorization: `Basic ${btoa(`${WORDPRESS_USERNAME}:${WORDPRESS_PASSWORD}`)}`,
         },
       },
     },

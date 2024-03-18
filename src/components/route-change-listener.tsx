@@ -7,8 +7,14 @@ const RouteChangeListener = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const handleRouteChangeStart = () => setLoading(true);
-    const handleRouteChangeComplete = () => setLoading(false);
+    let timeoutId: NodeJS.Timeout;
+    const handleRouteChangeStart = () => {
+      timeoutId = setTimeout(() => setLoading(true), 500);
+    };
+    const handleRouteChangeComplete = () => {
+      clearTimeout(timeoutId);
+      setLoading(false);
+    };
 
     // Écouter les événements de début et de fin de changement de route
     router.events.on("routeChangeStart", handleRouteChangeStart);
