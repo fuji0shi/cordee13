@@ -41,7 +41,7 @@ export const Login = () => {
           </div>
           <div className="relative z-20 mt-auto">
             <blockquote className="space-y-2">
-              <footer className="text-xs">
+              <footer className="text-xs text-white">
                 © 2024 fuji0shi. All rights reserved.
               </footer>
             </blockquote>

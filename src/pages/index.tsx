@@ -73,13 +73,13 @@ export const Home: NextPageWithLayout = () => {
         <Image
           alt="landscape-penhir-center"
           className="overflow-hidden rounded-md object-cover object-center"
-          // className="overflow-hidden rounded-md object-cover object-center shadow-lg shadow-black"
+          //className="overflow-hidden rounded-md object-cover object-center shadow-lg shadow-black"
           src="/images/penhir-center-1200.webp"
           fill
           priority
         />
-        <div className="absolute bottom-1/4 left-0 p-2 lg:top-0 lg:flex lg:flex-col lg:p-4">
-          <h1 className="border-b-1 border-white text-5xl font-extrabold text-white">
+        <div className="absolute bottom-1/4 left-0 cursor-default p-2 lg:top-0 lg:flex lg:flex-col lg:p-4">
+          <h1 className="border-b-1 border-white text-6xl font-extrabold text-white">
             <TextGenerateEffect words="Cordée 13" />
           </h1>
           <TextGenerateEffect

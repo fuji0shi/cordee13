@@ -12,7 +12,7 @@ export const sendmailRouter = createTRPCRouter({
     .input(zInputSendMail)
     .query(async ({ ctx, input }) => {
       const userMail = await ctx.db.membres.findFirst({
-        where: { email: input.email },
+        where: { email: input.email, licence_fsgt_parent: null },
       });
       if (!userMail) {
         return false;

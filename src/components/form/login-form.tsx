@@ -46,7 +46,7 @@ export default function LoginForm() {
           de compte utlisateur en cliquant sur ce lien :{" "}
           <Link
             href={"/register"}
-            className="text-sm text-muted-foreground underline hover:text-burnt-sienna"
+            className="text-muted-foreground underline hover:text-burnt-sienna"
           >
             Demande de compte utilisateur
           </Link>

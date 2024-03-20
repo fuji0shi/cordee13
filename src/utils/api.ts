@@ -58,6 +58,8 @@ export const api = createTRPCNext<AppRouter>({
  *
  * @example type HelloInput = RouterInputs['example']['hello']
  */
+
+export type RegisterInput = RouterInputs["user"]["createUser"];
 export type RouterInputs = inferRouterInputs<AppRouter>;
 
 /**

@@ -5,7 +5,7 @@ import { ThemeToggle } from "@/components/mode-toggle";
 import Image from "next/image";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { useRouter } from "next/router";
-import RegisterForm from "@/components/form/register-form";
+import PreRegisterForm from "@/components/form/pre-register-form";
 import { Toaster } from "@/components/ui/toaster";
 
 export const Register = () => {
@@ -28,7 +28,7 @@ export const Register = () => {
                 </p>
               </div>
               <div className="w-full 2xl:w-1/2 3xl:w-1/3">
-                <RegisterForm />
+                <PreRegisterForm />
                 <Toaster />
               </div>
             </div>
@@ -59,7 +59,7 @@ export const Register = () => {
           </div>
           <div className="relative z-20 mt-auto">
             <blockquote className="space-y-2">
-              <footer className="text-xs">
+              <footer className="text-xs text-white">
                 © 2024 fuji0shi. All rights reserved.
               </footer>
             </blockquote>

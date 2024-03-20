@@ -1,5 +1,6 @@
 generator client {
-    provider = "prisma-client-js"
+    provider        = "prisma-client-js"
+    previewFeatures = ["views"]
 }
 
 datasource db {
@@ -45,14 +46,17 @@ model Session {
 }
 
 model User {
-    id            String    @id @default(cuid())
+    id            String         @id @default(cuid())
     name          String?
-    email         String?   @unique
+    password      String
+    email         String?        @unique
     emailVerified DateTime?
     image         String?
     accounts      Account[]
     posts         Post[]
     sessions      Session[]
+    membre        UserMembre[]
+    cotation      UserCotation[]
 }
 
 model VerificationToken {
@@ -96,5 +100,59 @@ model RegisterSendMail {
     id      String   @id @default(cuid())
     email   String
     link    String
+    code    Int
     expires DateTime
+}
+
+model UserCotation {
+    id                     String  @id @default(cuid())
+    userId                 String
+    escalade_a_vue         String?
+    escalade_apres_travail String?
+    escalade_flash         String?
+
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    @@unique([userId])
+}
+
+model VoieCotation {
+    id       String @id @default(cuid())
+    cotation String
+}
+
+model EscaladeType {
+    id          String @id @default(cuid())
+    type        String
+    description String
+}
+
+model UserMembre {
+    id           String          @id @default(cuid())
+    userId       String
+    nom          String
+    prenom       String
+    licence_fsgt String
+    about        String?
+    annee_grimpe String?
+    collectifs   UserCollectif[]
+
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    @@unique([userId])
+}
+
+model UserCollectif {
+    id           String     @id @default(cuid())
+    userMemberId String
+    collectifId  String
+    collectif    Collectifs @relation(fields: [collectifId], references: [id])
+    userMember   UserMembre @relation(fields: [userMemberId], references: [id])
+}
+
+model Collectifs {
+    id   String @id @default(cuid())
+    name String
+
+    userCollectif UserCollectif[]
 }
